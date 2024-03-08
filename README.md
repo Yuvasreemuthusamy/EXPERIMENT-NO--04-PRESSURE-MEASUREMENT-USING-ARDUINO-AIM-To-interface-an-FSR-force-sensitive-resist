@@ -1,9 +1,9 @@
 # EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
 
-# DATE :
-# NAME :
-# ROLLNUMBER :
-# DEPARTMENT
+# DATE :08-03-2024
+# NAME :Yuva Sree M
+# ROLLNUMBER :212223230251
+# DEPARTMENT :AI-DS 
 ## AIM: 
 To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
  
@@ -79,29 +79,54 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
+ *your roll no : 212223230251
  
+ *your name   : Yuva Sree M 
  
+ *department and year : AI-DS and 1st year
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ ```
+int LED=7;
+int FSR;
+void setup()
+{
+  pinMode(LED,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  FSR = analogRead(A0);
+  Serial.print("Raw value=");
+  Serial.println(FSR);
+  delay(500);
+  int m;
+  m=map(FSR,0,159,0,10);
+  Serial.print("Mapped value=");
+  Serial.print(m);
+  if(FSR>50)
+  {
+    digitalWrite(LED,LOW);
+    delay(500);
+    digitalWrite(LED,HIGH);
+    delay(500);
+  }
+}
+
+ ```
  
 
 ![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
 
 
-### TABLE -02 standard deviation table 
+### TABLE -02 standard deviation table
+
+![points](https://github.com/Yuvasreemuthusamy/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144870887/fec9d100-a32c-4b72-b8b6-bc9cde8d2095)
+
+###graph
+
+![graph](https://github.com/Yuvasreemuthusamy/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144870887/14c1e013-673a-485e-a22a-584f34a78bef)
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
@@ -118,7 +143,13 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 σ = √[(1 - 4.6)2 + (3 - 4.6)2 + ... + (8 - 4.6)2)]/5
 σ = √(12.96 + 2.56 + 0.36 + 5.76 + 11.56)/5 = 2.577
 
+### led on
 
+![led on](https://github.com/Yuvasreemuthusamy/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144870887/b9434f35-aa22-41f2-b91a-8e5ad6e98ed2)
+
+### Schematic view
+
+![Screenshot 2024-03-08 151206](https://github.com/Yuvasreemuthusamy/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144870887/642d0b50-858f-4570-8676-57f795a16f6b)
 
 
 
